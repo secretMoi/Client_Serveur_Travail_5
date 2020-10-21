@@ -27,5 +27,43 @@ namespace Client_Serveur_Travail_5.Controllers
 
 			return View(viewModel);
 		}
+
+		public ActionResult AfficherAuteurs()
+		{
+			AuteurRepository repo = new AuteurRepository(new Travail5Context());
+
+			/*Auteur model = new Auteur()
+			{
+				Nom = "rantan",
+				Prenom = "plan"
+			};
+			repo.Add(model);*/
+
+			AfficherAuteurs viewModel = new AfficherAuteurs
+			{
+				Auteurs = repo.GetAll()
+			};
+
+			return View(viewModel);
+		}
+
+		public ActionResult Musique(int id)
+		{
+			AuteurRepository repo = new AuteurRepository(new Travail5Context());
+
+			/*Auteur model = new Auteur()
+			{
+				Nom = "rantan",
+				Prenom = "plan"
+			};
+			repo.Add(model);*/
+
+			AfficherAuteurs viewModel = new AfficherAuteurs
+			{
+				Auteurs = repo.GetAll()
+			};
+
+			return View(viewModel);
+		}
 	}
 }

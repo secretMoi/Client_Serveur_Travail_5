@@ -143,16 +143,19 @@
     <Compile Include="Models\Auteur.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Emprunt.cs" />
+    <Compile Include="Models\Interfaces\IAuteur.cs" />
     <Compile Include="Models\Interfaces\IClient.cs" />
     <Compile Include="Models\Interfaces\IDal.cs" />
     <Compile Include="Models\Interfaces\IMusique.cs" />
     <Compile Include="Models\Maper.cs" />
     <Compile Include="Models\Musique.cs" />
+    <Compile Include="Models\Repository\AuteurRepository.cs" />
     <Compile Include="Models\Repository\ClientRepository.cs" />
     <Compile Include="Models\Repository\MusiqueRepository.cs" />
     <Compile Include="Models\Travail5Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Application\Afficher.cs" />
+    <Compile Include="ViewModels\Application\AfficherAuteurs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -191,6 +194,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Application\Afficher.cshtml" />
+    <Content Include="Views\Application\AfficherAuteurs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

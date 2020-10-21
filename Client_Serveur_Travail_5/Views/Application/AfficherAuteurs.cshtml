@@ -1,0 +1,32 @@
+﻿@using Client_Serveur_Travail_5.Models
+@model Client_Serveur_Travail_5.ViewModels.Application.AfficherAuteurs
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AfficherAuteurs</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+            </tr>
+
+            @foreach (Auteur auteur in Model.Auteurs)
+            {
+                <tr>
+                    <td>@auteur.Nom</td>
+                    <td>@auteur.Prenom</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

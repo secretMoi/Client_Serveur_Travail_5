@@ -16,6 +16,12 @@ namespace Client_Serveur_Travail_5
 			);
 
 			routes.MapRoute(
+				name: "AfficherAuteurs",
+				url: "Afficher/Auteurs",
+				defaults: new { controller = "Application", action = "AfficherAuteurs" }
+			);
+
+			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
