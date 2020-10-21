@@ -10,6 +10,12 @@ namespace Client_Serveur_Travail_5
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 			routes.MapRoute(
+				name: "AfficherMusiques",
+				url: "Afficher",
+				defaults: new { controller = "Application", action = "Afficher" }
+			);
+
+			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

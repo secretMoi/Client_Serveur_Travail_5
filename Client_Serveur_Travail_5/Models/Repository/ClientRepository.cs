@@ -7,23 +7,22 @@ namespace Client_Serveur_Travail_5.Models.Repository
 {
 	public class ClientRepository : IClient<Client>
 	{
-		private readonly Travail5Context _context;
-		public Travail5Context Context => _context;
+		public Travail5Context Context { get; set; }
 
 		public ClientRepository(Travail5Context context)
 		{
-			_context = context;
+			Context = context;
 		}
 
 		public IList<Client> GetAll()
 		{
-			return _context.Clients.ToList(); // retourne la liste des commandes
+			return Context.Clients.ToList();
 		}
 
 		public Client GetById(int id)
 		{
 			// retourne le premier dont l'id correspond
-			return _context.Clients
+			return Context.Clients
 				//.Include(t => t.Locataire) // utilisé pour fill le lazy loading si foreign key null
 				.FirstOrDefault(p => p.Id == id);
 		}
@@ -33,7 +32,7 @@ namespace Client_Serveur_Travail_5.Models.Repository
 			if (model == null)
 				throw new ArgumentNullException(nameof(model));
 
-			_context.Clients.Add(model);
+			Context.Clients.Add(model);
 			SaveChanges();
 
 			return model.Id;
@@ -42,7 +41,7 @@ namespace Client_Serveur_Travail_5.Models.Repository
 		public bool SaveChanges()
 		{
 			// permet d'appliquer les modifications à la db
-			return _context.SaveChanges() >= 0;
+			return Context.SaveChanges() >= 0;
 		}
 
 		public void Create(Client model)
@@ -50,7 +49,7 @@ namespace Client_Serveur_Travail_5.Models.Repository
 			if (model == null)
 				throw new ArgumentNullException(nameof(model));
 
-			_context.Clients.Add(model);
+			Context.Clients.Add(model);
 
 			SaveChanges();
 		}
@@ -68,7 +67,7 @@ namespace Client_Serveur_Travail_5.Models.Repository
 
 		public bool Exist(Client model)
 		{
-			return _context.Clients.Any(client => client.Nom == model.Nom);
+			return Context.Clients.Any(client => client.Nom == model.Nom);
 		}
 	}
 }

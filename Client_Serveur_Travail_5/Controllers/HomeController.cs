@@ -9,10 +9,6 @@ namespace Client_Serveur_Travail_5.Controllers
 	{
 		public ActionResult Index()
 		{
-			ClientRepository repo = new ClientRepository(new Travail5Context());
-
-			IList<Client> clients = repo.GetAll();
-
 			return View();
 		}
 

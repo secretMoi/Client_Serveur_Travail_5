@@ -1,0 +1,36 @@
+﻿@using Client_Serveur_Travail_5.Models
+@model Client_Serveur_Travail_5.ViewModels.Application.Afficher
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Afficher</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Duree</th>
+            <th>Date</th>
+        </tr>
+        
+        @foreach (Musique musique in Model.Musiques)
+        {
+            <tr>
+                <td>@musique.Titre</td>
+                <td>@musique.Auteur</td>
+                <td>@musique.Duree</td>
+                <td>@musique.Date.ToShortDateString()</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>
