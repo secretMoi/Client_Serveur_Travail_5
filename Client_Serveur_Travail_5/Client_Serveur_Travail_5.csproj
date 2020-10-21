@@ -195,6 +195,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Application\Afficher.cshtml" />
     <Content Include="Views\Application\AfficherAuteurs.cshtml" />
+    <Content Include="Views\Application\Musique.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

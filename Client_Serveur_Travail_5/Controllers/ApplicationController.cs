@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using Client_Serveur_Travail_5.Models;
 using Client_Serveur_Travail_5.Models.Repository;
@@ -49,21 +51,28 @@ namespace Client_Serveur_Travail_5.Controllers
 
 		public ActionResult Musique(int id)
 		{
-			AuteurRepository repo = new AuteurRepository(new Travail5Context());
+			MusiqueRepository repo = new MusiqueRepository(new Travail5Context());
 
-			/*Auteur model = new Auteur()
+			Musique musique = repo.GetById(id);
+
+			return View(musique);
+		}
+
+		public ActionResult ListeFromAuteur(int id)
+		{
+			MusiqueRepository repo = new MusiqueRepository(new Travail5Context());
+
+			IList<Musique> musiques = 
+				repo.GetAll()
+				.Where(item => item.Auteur?.Id == id)
+				.ToList();
+
+			Afficher viewModel = new Afficher
 			{
-				Nom = "rantan",
-				Prenom = "plan"
-			};
-			repo.Add(model);*/
-
-			AfficherAuteurs viewModel = new AfficherAuteurs
-			{
-				Auteurs = repo.GetAll()
+				Musiques = musiques
 			};
 
-			return View(viewModel);
+			return View("Afficher", viewModel);
 		}
 	}
 }

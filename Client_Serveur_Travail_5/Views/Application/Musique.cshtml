@@ -1,0 +1,21 @@
+﻿@model Client_Serveur_Travail_5.Models.Musique
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Titre</title>
+</head>
+<body>
+    <div>
+        Titre : @Model.Titre <br />
+        Auteur : @Model.Auteur.Nom - @Model.Auteur.Prenom <br />
+        Durée : @Model.Duree <br />
+        Parution : @Model.Date.ToShortDateString() <br />
+    </div>
+</body>
+</html>

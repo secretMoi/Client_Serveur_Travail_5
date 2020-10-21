@@ -22,6 +22,18 @@ namespace Client_Serveur_Travail_5
 			);
 
 			routes.MapRoute(
+				name: "Musique",
+				url: "Musique/{id}",
+				defaults: new { controller = "Application", action = "Musique", id = UrlParameter.Optional }
+			);
+
+			routes.MapRoute(
+				name: "ListeFromAuteur",
+				url: "Afficher/Auteur/{id}",
+				defaults: new { controller = "Application", action = "ListeFromAuteur", id = UrlParameter.Optional }
+			);
+
+			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
