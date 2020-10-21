@@ -60,7 +60,8 @@ namespace Client_Serveur_Travail_5.Models.Repository
 				throw new ArgumentNullException(nameof(model));
 
 			Auteur modelInDb = GetById(model.Id);
-			Maper.Map(model, modelInDb);
+
+			Context.Entry(modelInDb).CurrentValues.SetValues(model);
 
 			SaveChanges();
 		}

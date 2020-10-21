@@ -7,5 +7,7 @@
 		void Modify(T model);
 
 		bool Exist(T model);
+
+		T Authentify(T model);
 	}
 }

@@ -69,5 +69,10 @@ namespace Client_Serveur_Travail_5.Models.Repository
 		{
 			return Context.Clients.Any(client => client.Nom == model.Nom);
 		}
+
+		public Client Authentify(Client model)
+		{
+			return Context.Clients.FirstOrDefault(item => item.Email == model.Email && item.Password == model.Password);
+		}
 	}
 }
